@@ -8,17 +8,18 @@ The day-by-day upsurge in the volume of unsolicited marketing emails (called spa
 Bayes theorem describes the probability of an event, based on prior knowledge of conditions that might be related to the event.
 The formula for Bayes theorem is - 
 
-P(A ┤|  B)=□((P(B ┤|  A).P(A))/(P(B)))
+P(A | B)= P(B | A).P(A)/P(B)
+
 where A and B are events and P(B)‡0
-	P(A ┤|  B) is a conditional probability: the likelihood of event A occurring given that B  is true
-	P(B ┤|  A) is also a conditional probability: the likelihood of event B  occurring given that A is true
+	P(A | B) is a conditional probability: the likelihood of event A occurring given that B  is true
+	P(B | A) is also a conditional probability: the likelihood of event B  occurring given that A is true
 	P(A) and P(B) are the probabilities of observing A and B respectively; they are known as the marginal probability.
 	A and B must be different events
 
 So, for example, given that the email has the word "free" in it, what is the probability of this email being spam? Using Bayes theorem, we can now calculate the same probability as -
-P(Spam ┤|  Free)=□((P(Free ┤|  Spam).P(Spam))/(P(Free)))
+P(Spam | Free)= P(Free | Spam).P(Spam)/P(Free)
 
-Where P(Spam ┤|  Free) is the probability of a mail being Spam given that it contains the word “Free” in it and P(Free ┤|  Spam) is the probability of the word “Free” being present in a spam email. We calculate the probability for many such words and assuming that the occurrence of these words is independent, we calculate the joint probability by multiplying all the individual probabilities to classify whether the email is spam or ham.
+Where P(Spam | Free) is the probability of a mail being Spam given that it contains the word “Free” in it and P(Free | Spam) is the probability of the word “Free” being present in a spam email. We calculate the probability for many such words and assuming that the occurrence of these words is independent, we calculate the joint probability by multiplying all the individual probabilities to classify whether the email is spam or ham.
 
 
 ## Word Cloud – 
@@ -30,13 +31,13 @@ Word cloud is a simple visualization technique where a group of words in a text 
 	Accuracy –  the fraction of the total predictions that the model got right 
 
 	Precision – the ratio of correctly predicted spam messages to the total number of times the model predicted that an email was spam 
-Formula = □((True Positives)/((True Positives + False Positives) ))
+Formula = True Positives/(True Positives + False Positives)
 
 	Recall – the ratio between the correctly identified spam emails and all the spam emails that were present
-Formula = □((True Positives)/((True Positives + False Negatives)))
+Formula = True Positives/(True Positives + False Negatives)
 
 	F-score – 
-Formula = 2*  (Precision * Recall)/((Precision + Recall))
+Formula = 2* (Precision * Recall)/(Precision + Recall)
 
 
 ## Bag of words Approach – 
@@ -47,7 +48,7 @@ The Bag of Words approach is used for classifying documents. Each word is looked
 # DATA SOURCE – 
 
 The source of the data for this project is the  Spam Assassin public corpus. All the e-mail data used in the project comes from an open source anti-spam platform called SpamAssassin. Spam Assassin has a huge set of spam and ham emails that they've made available to the public to do things like train a spam classifier.
-Link to the Source data files - https://github.com/shobha-bhagwat/Machine-Learning/blob/master/Spam%20Filter/SpamData.zip 
+
 
 It contains 1898 spam emails and 3901 ham emails. 
 
